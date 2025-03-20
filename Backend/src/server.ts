@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import "./config/mqtt";
 import deviceRoutes from "./routes/deviceRoutes";
+import sensorRoutes from "./routes/sensorRoutes";
 
 
 dotenv.config();
@@ -15,7 +16,7 @@ app.use(express.json());
 
 
 app.use("/api", deviceRoutes)
-
+app.use("/api", sensorRoutes)
 
 
 app.listen(PORT, () => {
