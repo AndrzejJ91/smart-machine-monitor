@@ -12,6 +12,7 @@ const Dashboard = () => {
     <ChartPanel />
     </div>
     
+    
     </div>
     
   )

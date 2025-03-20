@@ -1,9 +1,6 @@
 import mysql from "mysql2/promise";
 import dotenv from "dotenv";
 
-
-
-
 dotenv.config();
 
 
@@ -19,9 +16,12 @@ const pool = mysql.createPool({
 
 });
 
-// ✅ Sprawdzenie połączenia przy starcie serwera
 pool.getConnection()
-    .then(() => console.log("✅ Połączono z MySQL"))
+    .then((connection) => {
+        console.log("✅ Połączono z MySQL");
+        console.log("📂 Baza danych: ", connection.config.database); // Loguj nazwę bazy
+        connection.release();
+    })
     .catch((err) => console.error("❌ Błąd MySQL:", err));
 
 
