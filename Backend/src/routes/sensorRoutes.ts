@@ -17,7 +17,7 @@ router.get('/:sensorName', async (req: Request, res: Response) => {
             'SELECT value, timestamp FROM sensor_data WHERE sensor_name = ? ORDER BY timestamp DESC LIMIT 20',
             [sensorName]
         );
-
+        
         res.json(rows);
     } catch (err) {
         console.error(`Błąd podczas pobierania danych dla ${sensorName}:`, err);

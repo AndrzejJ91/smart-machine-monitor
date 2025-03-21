@@ -27,7 +27,7 @@ const PerformanceChart: React.FC = () => {
         }));
 
         setData(formattedData);
-        console.log("Dane z API:", formattedData);
+       
       }catch(error) {
         console.error("bląd danych wydajności maszyn", error);
 

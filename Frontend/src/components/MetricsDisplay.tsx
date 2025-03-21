@@ -49,7 +49,7 @@ const MetricsDisplay: React.FC = () => {
     
         return {
             label,
-            value: String(item.total_value),  // Zamiast item.value
+            value: String(item.average_value),  // Zamiast item.value
             color,
         };
     });
