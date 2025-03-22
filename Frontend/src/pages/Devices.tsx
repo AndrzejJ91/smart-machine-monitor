@@ -1,7 +1,7 @@
-import axios from 'axios';
+
 import { useEffect, useState } from 'react';
 import { Monitor } from 'lucide-react';
-
+import api from "../utlis/axios.Config"
 interface Device {
   id: number;
   name: string;
@@ -18,7 +18,7 @@ const Devices = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/devices');
+        const response = await api.get('http://localhost:3000/api/devices');
         const formattedData = response.data.map((item: any) => {
           let configObj;
           

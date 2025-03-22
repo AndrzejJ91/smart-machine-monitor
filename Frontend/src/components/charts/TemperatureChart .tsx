@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import axios from 'axios';
 
+import api from '../../utlis/axios.Config';
 interface DataPoint {
   timestamp: string;
   value: number;
@@ -13,7 +13,7 @@ const TemperatureChart: React.FC = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/temperature_sensor');
+        const response = await api.get('http://localhost:3000/api/temperature_sensor');
         const formattedData = response.data.map((item: any) => ({
           timestamp: new Date(item.timestamp).toLocaleTimeString(),
           value: item.value,

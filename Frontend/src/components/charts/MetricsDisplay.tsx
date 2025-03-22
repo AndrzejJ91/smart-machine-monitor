@@ -1,5 +1,6 @@
-import axios from 'axios';
+
 import React, { useEffect, useState } from 'react';
+import api from '../../utlis/axios.Config';
 
 interface Metric {
   label: string;
@@ -13,7 +14,7 @@ const MetricsDisplay: React.FC = () => {
   // Funkcja do pobierania danych metryk
   const fetchMetrics = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/metrics');
+      const response = await api.get('http://localhost:3000/api/metrics');
       
       
       const formattedMetrics = response.data.map((item: any) => {

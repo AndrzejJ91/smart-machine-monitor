@@ -1,6 +1,7 @@
 import express from "express";
-import pool from "../config/db";
+
 import { getSensorData, getSensors } from "../controllers/sensorsController";
+import { verifyToken } from "../auth/authMiddleware";
 
 
 const router = express.Router();
@@ -11,7 +12,7 @@ const router = express.Router();
 router.get('/allSensors', getSensors);
 
 // Endpoint dynamiczny (dane pojedynczego sensora)
-router.get('/:sensorName', getSensorData);
+router.get('/:sensorName',verifyToken, getSensorData);
 
 
 export default router;

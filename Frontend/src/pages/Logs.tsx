@@ -1,6 +1,6 @@
-import axios from 'axios';
-import  { useEffect, useState } from 'react'
 
+import  { useEffect, useState } from 'react'
+import api from "../utlis/axios.Config"
 interface Logs {
     id: number,
     type: String,
@@ -19,7 +19,7 @@ const Logs = () => {
 
         const fetchData = async () => {
             try{
-                const response = await axios.get('http://localhost:3000/api/logs');
+                const response = await api.get('http://localhost:3000/api/logs');
 
             setLogs(response.data);
 

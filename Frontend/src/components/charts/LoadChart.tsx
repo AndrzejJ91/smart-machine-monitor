@@ -1,7 +1,7 @@
-import axios from 'axios';
+
 import React, { useEffect, useState } from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
+import api from '../../utlis/axios.Config';
 
 
 
@@ -20,7 +20,7 @@ const LoadChart: React.FC = () => {
     const fetchData = async () => {
 
       try {
-        const response = await axios.get('http://localhost:3000/api/load_sensor');
+        const response = await api.get('http://localhost:3000/api/load_sensor');
         const formattedData = response.data.map((item: any) => ({
           timestamp: new Date(item.timestamp).toLocaleTimeString(),
           value: item.value,

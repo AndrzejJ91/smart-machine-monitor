@@ -34,28 +34,3 @@ router.get('/metrics', async (req: Request, res: Response) => {
 export default router;
 
 
-/*
-
-// ✅ Endpoint bezpośrednio w app.get() - BEZ ROUTERA
-app.get("/api/metrics", async (req, res) => {
-    try {
-        console.log("➡️ Pobieram dane metryk...");
-
-        const query = `
-            SELECT sensor_name, ROUND(AVG(value), 2) AS average_value
-            FROM sensor_data
-            WHERE sensor_name IN ('temperature_sensor', 'performance_sensor', 'load_sensor', 'machine_status', 'working_time')
-            GROUP BY sensor_name;
-        `;
-
-        const [rows] = await pool.query(query);
-        console.log("✅ Dane zwrócone z bazy (bezpośrednio):", rows);
-
-        res.json(rows);
-    } catch (error) {
-        console.error("❌ Błąd podczas pobierania danych (bezpośrednio):", error);
-        res.status(500).json({ error: "Błąd serwera" });
-    }
-});
-
-*/

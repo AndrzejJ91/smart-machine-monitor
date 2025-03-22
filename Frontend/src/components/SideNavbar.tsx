@@ -6,7 +6,7 @@ const SideNavbar = () => {
   const navigate = useNavigate();
 
   const handelLogout = () => {
-
+    localStorage.removeItem("token")
     navigate('/');
 
   };

@@ -1,7 +1,7 @@
-import axios from 'axios';
+
 import { useEffect, useState } from 'react';
 import { ActivitySquare } from 'lucide-react';
-
+import api from "../utlis/axios.Config"
 interface Sensors {
   id: number;
   device_id: number;
@@ -16,7 +16,7 @@ const Sensors = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/allSensors');
+        const response = await api.get('http://localhost:3000/api/allSensors');
         const formattedData = response.data.map((item: any) => ({
           id: item.id,
           device_id: item.device_id,

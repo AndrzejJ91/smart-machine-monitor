@@ -1,7 +1,7 @@
-import axios from 'axios';
+
 import React, { useEffect, useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
+import api from '../../utlis/axios.Config';
 
 
 
@@ -19,7 +19,7 @@ const PerformanceChart: React.FC = () => {
 
     const fetchData = async () => {
       try{
-        const response = await axios.get('http://localhost:3000/api/performance_sensor');
+        const response = await api.get('http://localhost:3000/api/performance_sensor');
         const formattedData = response.data.map((item: any) => ({
           timestamp: new Date(item.timestamp).toLocaleTimeString(),
           value: item.value
