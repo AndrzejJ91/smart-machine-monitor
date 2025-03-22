@@ -4,7 +4,7 @@ import cors from "cors";
 import deviceRoutes from "./routes/deviceRoutes";
 import sensorRoutes from "./routes/sensorRoutes";
 import metricsRoutes from "./routes/metricsRoutes";
-
+import logsRoutes from './routes/logsRoutes'
 
 dotenv.config();
 
@@ -25,7 +25,9 @@ app.listen(PORT, () => {
 
 
 // PODŁĄCZANIE TRAS
+
 app.use("/api", metricsRoutes);
+app.use("/api", logsRoutes)
 app.use("/api", deviceRoutes);
 app.use("/api", sensorRoutes);
 

@@ -1,28 +1,17 @@
-import express, { Request, Response } from "express";
+import express from "express";
 import pool from "../config/db";
+import { getSensorData, getSensors } from "../controllers/sensorsController";
 
 
 const router = express.Router();
 
 
+// Endpoint ogólny (dane wszystkich sensorów)
 
+router.get('/allSensors', getSensors);
 
-// Uniwersalny endpoint do pobierania danych z różnych sensorów
-router.get('/:sensorName', async (req: Request, res: Response) => {
-    const sensorName = req.params.sensorName;
+// Endpoint dynamiczny (dane pojedynczego sensora)
+router.get('/:sensorName', getSensorData);
 
-    try {
-        // Query do pobrania danych na podstawie nazwy sensora
-        const [rows] = await pool.query(
-            'SELECT value, timestamp FROM sensor_data WHERE sensor_name = ? ORDER BY timestamp DESC LIMIT 20',
-            [sensorName]
-        );
-        
-        res.json(rows);
-    } catch (err) {
-        console.error(`Błąd podczas pobierania danych dla ${sensorName}:`, err);
-        res.status(500).json({ error: 'Błąd serwera' });
-    }
-});
 
 export default router;
