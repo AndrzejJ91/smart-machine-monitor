@@ -1,10 +1,11 @@
 import express from "express";
-import {login} from './authController';
+import {activeStatus, login} from './authController';
 
 
 const router = express.Router();
 
 
 router.post('/login', login);
+router.get('/user/status', activeStatus)
 
 export default router;

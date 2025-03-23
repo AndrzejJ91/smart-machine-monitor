@@ -6,7 +6,7 @@ import LogIn from './LogIn';
 const App = () => {
   return (
     
-    <Router>
+   <Router>
       <Routes>
         <Route path='/' element={<LogIn />} />
         <Route path="/dashboard/*" element={<Dashboard />} />

@@ -5,6 +5,8 @@ import SideNavbar from "./components/SideNavbar";
 import Devices from "./pages/Devices";
 import Sensors from "./pages/Sensors";
 import Logs from "./pages/Logs";
+import Settings from "./pages/Settings";
+import Profile from "./pages/Profile";
 
 const Dashboard = () => {
   return (
@@ -23,6 +25,9 @@ const Dashboard = () => {
           <Route path="/devices" element={<Devices />} />
           <Route path="/allSensors" element={<Sensors />} />
           <Route path="/logs" element={<Logs />} />
+          <Route path="/settings" element={<Settings />} />
+
+          <Route path="settings/profile" element={<Profile />} />
         </Routes>
       </div>
     </div>

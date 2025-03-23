@@ -40,6 +40,16 @@ export const login = async (req: Request, res: Response) => {
         );
 
         res.json({token});
-
         
 };
+
+// funkcja do sprawdzenia statusu użytkownika
+export const activeStatus = (req: Request, res: Response) => {
+
+    const lastLogin = new Date(Date.now() - 2 * 60 * 1000);
+    const isActive = Date.now() - lastLogin.getTime() < 5 * 60 * 1000;
+
+    res.json({isActive, lastLogin});
+
+
+}

@@ -7,11 +7,11 @@ const api = axios.create({
 // Interceptor do dodawania tokena do każdego żądania
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
-  console.log("TOKEN Z LOCALSTORAGE:", token);  // LOG
+  //console.log("TOKEN Z LOCALSTORAGE:", token);  // LOG
 
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
-    console.log("Token dodany do nagłówka:", config.headers.Authorization);  // LOG
+    //console.log("Token dodany do nagłówka:", config.headers.Authorization);  // LOG
   } else {
     console.warn("❗ Brak tokena w localStorage");
   }
