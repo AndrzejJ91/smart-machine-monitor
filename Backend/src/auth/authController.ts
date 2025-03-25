@@ -2,44 +2,51 @@ import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import { Request, Response } from 'express';
 import dotenv from "dotenv";
+import pool from "../config/db";
 
 dotenv.config();
 
 
 export const login = async (req: Request, res: Response) => {
 
-    const {username, password} = req.body;
+    const {email, password} = req.body;
 
-      const plainPassword = "admin123"
-      const hashedPassword = bcrypt.hashSync(plainPassword, 10);  
+     try {
+        const [rows]: any = await pool.query('SELECT * FROM users where email = ?',[email] )
+            
+            if(rows.length === 0) {
+                res.status(401).json({error: 'Nieprawidłowy login lub hasło'});
+                return;
+            };
 
-    // Przykładowe dane logowania
-    const mockUser = {
-        id: 1,
-        username: "admin",
-        password: hashedPassword
-    };
+            const user = rows[0];
+            
+            // Sprawdzenie poprawności hasła
 
-    // Sprawdzenie danych logowania
+            const isValidPassword = await bcrypt.compare(password, user.password);
+                if(!isValidPassword) {
+                    res.status(401).json({ error: 'Nieprawidłowy login lub hasło' })
+                    return;
+                };
 
-       const isPasswordVaild = await bcrypt.compare(password, mockUser.password);
-       
-       if(username !== mockUser.username || !isPasswordVaild) {
-        res.status(401).json({error :'Nieprawidłowy login lub hasło' })
-        return;
-       };
 
-       
-        // Generowanie tokena
+             // Generowanie tokena
 
         const token = jwt.sign(
-            {id:mockUser.id, username: mockUser.username},
+            {id:user.id, email: user.email},
             process.env.JWT_SECRET as string,
             {expiresIn: "1h"}
 
         );
 
         res.json({token});
+     }catch(error){
+        res.status(500).json({ error: 'Błąd serwera podczas logowania' })
+
+     }
+
+       
+       
         
 };
 

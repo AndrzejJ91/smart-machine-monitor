@@ -6,6 +6,8 @@ import sensorRoutes from "./routes/sensorRoutes";
 import metricsRoutes from "./routes/metricsRoutes";
 import logsRoutes from './routes/logsRoutes'
 import authRoutes from "./auth/authRoutes";
+import userRoutes from "./routes/userRoutes";
+import "./config/mqtt";
 
 dotenv.config();
 
@@ -30,6 +32,7 @@ app.listen(PORT, () => {
 
 // PODŁĄCZANIE TRAS
 app.use("/api", authRoutes)
+app.use("/api", userRoutes)
 app.use("/api", metricsRoutes);
 app.use("/api", logsRoutes)
 app.use("/api", deviceRoutes);

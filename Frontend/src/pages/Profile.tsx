@@ -1,5 +1,6 @@
 import  { useState } from 'react';
 import Profileinfo from '../components/profile/Profileinfo';
+import ChangePassword from '../components/profile/ChangePassword';
 
 const tabs = ["Profile Info", "Change Password", "Preferences", "Activity Log"];
 
@@ -29,7 +30,7 @@ const Profile = () => {
         {/* Treść zakładki */}
         <div className="bg-gray-100 p-6 rounded-lg shadow-md h-64">
           {activeTab === 0 && <Profileinfo />}
-          {activeTab === 1 && <div>Change Password Content</div>}
+          {activeTab === 1 && <ChangePassword />}
           {activeTab === 2 && <div>Preferences Content</div>}
           {activeTab === 3 && <div>Activity Log Content</div>}
         </div>

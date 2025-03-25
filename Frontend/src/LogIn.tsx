@@ -10,15 +10,15 @@ const LogIn = () => {
 
     const navigate = useNavigate();
 
-    const [username, setUsername] = useState('');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const handleLogin = async () => {
         
       try {
-        const response = await api.post('http://localhost:3000/api/login', {username, password})
+        const response = await api.post('http://localhost:3000/api/login', {email, password})
               const token = response.data.token
-              localStorage.setItem('token', token)
+              await localStorage.setItem('token', token)
               navigate('/dashboard');
       }catch(error) {
         alert('Nieprawidłowy login lub hasło');
@@ -36,7 +36,7 @@ const LogIn = () => {
         <h1 className='text-3xl font-bold mb-6 text-gray-800'>Log In</h1>
         <div className='flex flex-col gap-4 w-full'>
           <input
-            onChange={(e) => setUsername(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
             type="email"
             name="email"
             placeholder='Email'
