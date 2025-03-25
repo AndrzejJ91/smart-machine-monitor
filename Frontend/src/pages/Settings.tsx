@@ -5,8 +5,8 @@ import { User, MessageCircle, File, Bell, MapPin } from 'lucide-react';
 
 const SettingData = [
     {title: "User Profil", description:"Manage your personal data and password", icon: User, path: "/dashboard/settings/profile"},
-    {title: "Messages", description: "View and manage your messages", icon: MessageCircle, path: "/messages"},
-    {title: "Files", description: "Access uploaded files and documents", icon: File, path: "/files" },
+    {title: "Messages", description: "View and manage your messages", icon: MessageCircle, path: "/dashboard/settings/messages"},
+    {title: "Files", description: "Access uploaded files and documents", icon: File, path: "/dashboard/settings/files" },
     {title: "Alerts", description: "View critical system alerts", icon: Bell, path:"/alerts" },
     {title: "Map View", description: "Track device locations", icon : MapPin, path: "/map"}
 ]

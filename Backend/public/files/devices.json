@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Urządzenie 1",
+    "config": "{\"interval\": 10, \"unit\": \"C\"}",
+    "created_at": "2025-03-20T19:05:28.000Z"
+  },
+  {
+    "id": 2,
+    "name": "Urządzenie 2",
+    "config": "{\"interval\": 5, \"unit\": \"%\"}",
+    "created_at": "2025-03-20T19:05:28.000Z"
+  },
+  {
+    "id": 3,
+    "name": "Urządzenie 3",
+    "config": "{\"interval\": 2, \"unit\": \"%\"}",
+    "created_at": "2025-03-20T19:05:28.000Z"
+  },
+  {
+    "id": 4,
+    "name": "Urządzenie 4",
+    "config": "{\"interval\": 7, \"unit\": \"bool\"}",
+    "created_at": "2025-03-20T19:05:28.000Z"
+  },
+  {
+    "id": 5,
+    "name": "Urządzenie 5",
+    "config": "{\"interval\": 10, \"unit\": \"h\"}",
+    "created_at": "2025-03-20T19:05:28.000Z"
+  }
+]

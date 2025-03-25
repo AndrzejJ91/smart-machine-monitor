@@ -7,6 +7,7 @@ import Sensors from "./pages/Sensors";
 import Logs from "./pages/Logs";
 import Settings from "./pages/Settings";
 import Profile from "./pages/Profile";
+import Files from "./components/Files"
 
 const Dashboard = () => {
   return (
@@ -31,6 +32,8 @@ const Dashboard = () => {
           <Route path="/settings" element={<Settings />} />
           {/* Profile page under settings */}
           <Route path="settings/profile" element={<Profile />} />
+
+          <Route path="settings/files" element={<Files />} />
         </Routes>
       </div>
     </div>

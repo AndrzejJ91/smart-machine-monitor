@@ -73,7 +73,7 @@ const MetricsDisplay: React.FC = () => {
       key={index}
       className={`w-48 h-28 ${metric.color} mx-4 rounded-xl shadow-md 
       flex flex-col justify-center items-center 
-      transition duration-500 ease-in-out transform hover:scale-105 cursor-pointer
+      transition duration-300 ease-in-out transform hover:scale-105 cursor-pointer
       opacity-0 animate-slide-up delay-${index * 100}`}
     >
       <span className="text-white text-lg font-semibold">{metric.label}</span>
