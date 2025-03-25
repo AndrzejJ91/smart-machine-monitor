@@ -3,7 +3,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-
 const pool = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'iiot_user',
@@ -13,16 +12,15 @@ const pool = mysql.createPool({
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0
-
 });
 
+// Attempt to connect to the MySQL database
 pool.getConnection()
     .then((connection) => {
-        console.log("✅ Połączono z MySQL");
-        console.log("📂 Baza danych: ", connection.config.database); // Loguj nazwę bazy
+        console.log("✅ Connected to MySQL");
+        console.log("📂 Database: ", connection.config.database); // Log the database name
         connection.release();
     })
-    .catch((err) => console.error("❌ Błąd MySQL:", err));
-
+    .catch((err) => console.error("❌ MySQL error:", err));
 
 export default pool;

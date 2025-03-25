@@ -1,16 +1,13 @@
-import express, {Request, Response} from "express"
+import express, { Request, Response } from "express";
 import pool from "../config/db";
-
-
 
 const router = express.Router();
 
-
 router.get('/metrics', async (req: Request, res: Response) => {
-    console.log("🟡 Pool w routerze:", pool ? "Połączenie działa" : "Brak połączenia");
+    console.log("🟡 Pool in router:", pool ? "Connection is working" : "No connection");
 
     try {
-        console.log("➡️ Pobieram dane metryk...");
+        console.log("➡️ Fetching metrics data...");
 
         const query = `
             SELECT sensor_name, ROUND(AVG(value), 2) AS average_value
@@ -20,17 +17,16 @@ router.get('/metrics', async (req: Request, res: Response) => {
         `;
 
         const [rows] = await pool.query(query);
-        console.log("✅ Dane zwrócone z bazy (bezpośrednio):", rows);
-        res.json(rows)
+        console.log("✅ Data returned from the database (directly):", rows);
+        res.json(rows);
 
-    }catch (error) {
-        console.error("❌ Błąd podczas pobierania danych (bezpośrednio):", error);
-        res.status(500).json({ error: "Błąd serwera" });
-     };
-
+    } catch (error) {
+        console.error("❌ Error while fetching data (directly):", error);
+        res.status(500).json({ error: "Server error" });
+    }
 });
 
-
 export default router;
+
 
 

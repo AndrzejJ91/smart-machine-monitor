@@ -4,22 +4,22 @@ const api = axios.create({
   baseURL: 'http://localhost:3000/api',
 });
 
-// Interceptor do dodawania tokena do każdego żądania
+// Interceptor to add token to every request
 api.interceptors.request.use((config) => {
   const token = localStorage.getItem('token');
-  //console.log("🔥 Token przed dodaniem do nagłówka:", token);
+  //console.log("🔥 Token before adding to header:", token);
 
-  // Jeśli jest to żądanie logowania, nie dodawaj tokena
+  // If it is a login request, do not add the token
   if (config.url?.includes('/login')) {
-   // console.log("🚫 Logowanie - nie dodajemy tokena");
+    // console.log("🚫 Login request - not adding token");
     return config;
   }
 
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
-   // console.log("✅ Token dodany do nagłówka:", config.headers.Authorization);
+    // console.log("✅ Token added to header:", config.headers.Authorization);
   } else {
-    console.warn("❗ Brak tokena w localStorage");
+    console.warn("❗ No token found in localStorage");
   }
 
   return config;
@@ -27,12 +27,12 @@ api.interceptors.request.use((config) => {
   return Promise.reject(error);
 });
 
-// Interceptor odpowiedzi - obsługa błędów autoryzacji
+// Response interceptor - handling authorization errors
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response && error.response.status === 401) {
-      console.warn("❗ Token jest nieważny lub wygasł, wylogowywanie...");
+      console.warn("❗ Token is invalid or expired, logging out...");
       localStorage.removeItem('token');
       window.location.href = '/';
     }

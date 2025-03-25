@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
 import api from '../../utlis/axios.Config';
+
 interface DataPoint {
   timestamp: string;
   value: number;
@@ -20,7 +20,7 @@ const TemperatureChart: React.FC = () => {
         }));
         setData(formattedData);
       } catch (error) {
-        console.error('Błąd pobierania danych temperatury:', error);
+        console.error('Error fetching temperature data:', error);
       }
     };
 
@@ -31,7 +31,7 @@ const TemperatureChart: React.FC = () => {
 
   return (
     <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-      <h3 className="text-lg font-semibold mb-2">Temperatura Maszyny</h3>
+      <h3 className="text-lg font-semibold mb-2">Machine Temperature</h3>
       <ResponsiveContainer width="100%" height={300}>
         <LineChart data={data}>
           <CartesianGrid strokeDasharray="3 3" />
@@ -46,3 +46,4 @@ const TemperatureChart: React.FC = () => {
 };
 
 export default TemperatureChart;
+

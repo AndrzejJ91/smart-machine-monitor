@@ -43,17 +43,17 @@ const LoadChart: React.FC = () => {
 
   return (
     <div className="bg-gray-100 p-4 rounded-lg shadow-md">
-      <h3 className="text-lg font-semibold mb-2">Obciążenie Maszyny</h3>
-      <ResponsiveContainer width="100%" height={300}>
-        <AreaChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="timestamp" />
-          <YAxis />
-          <Tooltip />
-          <Area type="monotone" dataKey="value" stroke="#82ca9d" fill="#82ca9d" />
-        </AreaChart>
-      </ResponsiveContainer>
-    </div>
+  <h3 className="text-lg font-semibold mb-2">Machine Load</h3>
+  <ResponsiveContainer width="100%" height={300}>
+    <AreaChart data={data}>
+      <CartesianGrid strokeDasharray="3 3" />
+      <XAxis dataKey="timestamp" />
+      <YAxis />
+      <Tooltip />
+      <Area type="monotone" dataKey="value" stroke="#82ca9d" fill="#82ca9d" />
+    </AreaChart>
+  </ResponsiveContainer>
+</div>
   );
 };
 

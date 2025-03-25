@@ -14,25 +14,29 @@ const Dashboard = () => {
       <SideNavbar />
       <div className="flex flex-col m-5 w-full">
         <Routes>
-          {/* Główna strona dashboardu */}
+          {/* Main dashboard page */}
           <Route path="/" element={
             <>
               <MetricsDisplay />
               <ChartPanel />
             </>
           } />
-          {/* Podstrona urządzeń */}
+          {/* Devices page */}
           <Route path="/devices" element={<Devices />} />
+          {/* All sensors page */}
           <Route path="/allSensors" element={<Sensors />} />
+          {/* Logs page */}
           <Route path="/logs" element={<Logs />} />
+          {/* Settings page */}
           <Route path="/settings" element={<Settings />} />
-
+          {/* Profile page under settings */}
           <Route path="settings/profile" element={<Profile />} />
         </Routes>
       </div>
     </div>
   );
 };
+
 
 export default Dashboard;
 

@@ -4,7 +4,7 @@ import cors from "cors";
 import deviceRoutes from "./routes/deviceRoutes";
 import sensorRoutes from "./routes/sensorRoutes";
 import metricsRoutes from "./routes/metricsRoutes";
-import logsRoutes from './routes/logsRoutes'
+import logsRoutes from './routes/logsRoutes';
 import authRoutes from "./auth/authRoutes";
 import userRoutes from "./routes/userRoutes";
 import "./config/mqtt";
@@ -15,26 +15,21 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors({
-    origin: 'http://localhost:5173', // Adres frontendowy
-    credentials: true               // Wymagane, jeśli używasz ciasteczek
-  }));
+    origin: 'http://localhost:5173', // Frontend address
+    credentials: true               // Required if using cookies
+}));
 app.use(express.json());
 
-
-
-// Logowanie przy starcie
+// Logging on startup
 app.listen(PORT, () => {
-    console.log(`✅ Server działa na porcie: ${PORT}`);
-   
+    console.log(`✅ Server is running on port: ${PORT}`);
 });
 
-
-
-// PODŁĄCZANIE TRAS
-app.use("/api", authRoutes)
-app.use("/api", userRoutes)
+// ROUTE CONNECTIONS
+app.use("/api", authRoutes);
+app.use("/api", userRoutes);
 app.use("/api", metricsRoutes);
-app.use("/api", logsRoutes)
+app.use("/api", logsRoutes);
 app.use("/api", deviceRoutes);
 app.use("/api", sensorRoutes);
 

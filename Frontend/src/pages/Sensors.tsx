@@ -36,24 +36,30 @@ const Sensors = () => {
   }, []);
 
   return (
-    <div className="p-6">
-      <h2 className="text-2xl font-bold mb-6">Sensors</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 cursor-pointer">
-      {sensors.map((sensor, index) => (
-  <div key={index} className="p-4 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-200">
-    <div className="flex items-center justify-between mb-2">
-      <div className="flex items-center">
-        <ActivitySquare className="text-green-500 mr-2" size={24} />
-        <h3 className="text-lg font-semibold">{sensor.sensor_name}</h3>
+    <div className="p-6 opacity-0 animate-slide-up">
+  <h2 className="text-2xl font-bold mb-6">Sensors</h2>
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 cursor-pointer">
+    {sensors.map((sensor, index) => (
+      <div
+        key={index}
+        className="p-4 bg-white rounded-xl shadow-md hover:shadow-xl 
+        transition duration-500 ease-in-out transform hover:scale-105 
+        opacity-0 animate-fade-in"
+      >
+        <div className="flex items-center justify-between mb-2">
+          <div className="flex items-center">
+            <ActivitySquare className="text-green-500 mr-2" size={24} />
+            <h3 className="text-lg font-semibold">{sensor.sensor_name}</h3>
+          </div>
+          <span className="text-xs text-gray-400">Device ID: {sensor.device_id}</span>
+        </div>
+        <p className="text-gray-600">Value: <span className="font-medium">{sensor.value}</span></p>
+        <span className="text-sm text-gray-400">{sensor.timestamp}</span>
       </div>
-      <span className="text-xs text-gray-400">Device_id: {sensor.device_id}</span>
-    </div>
-    <p className="text-gray-600">Value: <span className="font-medium">{sensor.value}</span></p>
-    <span className="text-sm text-gray-400">{sensor.timestamp}</span>
+    ))}
   </div>
-))}
-      </div>
-    </div>
+</div>
+
   );
 };
 
