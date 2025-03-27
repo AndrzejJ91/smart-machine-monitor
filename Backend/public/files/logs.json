@@ -1,0 +1,42 @@
+[
+  {
+    "id": 5,
+    "type": "ERROR",
+    "source": "Sensor pressure_sensor",
+    "message": "Sensor disconnected unexpectedly.",
+    "status": "unresolved",
+    "timestamp": "2024-03-21T10:20:00.000Z"
+  },
+  {
+    "id": 4,
+    "type": "INFO",
+    "source": "User JohnDoe",
+    "message": "Changed sensor configuration.",
+    "status": "resolved",
+    "timestamp": "2024-03-21T10:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "type": "ERROR",
+    "source": "Backend Service",
+    "message": "Database connection failed.",
+    "status": "unresolved",
+    "timestamp": "2024-03-21T09:15:00.000Z"
+  },
+  {
+    "id": 2,
+    "type": "WARNING",
+    "source": "Machine #3",
+    "message": "Performance dropped below threshold.",
+    "status": "unresolved",
+    "timestamp": "2024-03-21T09:05:00.000Z"
+  },
+  {
+    "id": 1,
+    "type": "INFO",
+    "source": "Sensor temperature_sensor",
+    "message": "Sensor initialized successfully.",
+    "status": "resolved",
+    "timestamp": "2024-03-21T09:00:00.000Z"
+  }
+]

@@ -1,0 +1,149 @@
+[
+  {
+    "id": 22,
+    "device_id": 1,
+    "sensor_name": "temperature_sensor",
+    "value": 55.8,
+    "timestamp": "2025-03-25T12:53:29.000Z"
+  },
+  {
+    "id": 20,
+    "device_id": 5,
+    "sensor_name": "working_time",
+    "value": 130,
+    "timestamp": "2025-03-20T19:00:40.000Z"
+  },
+  {
+    "id": 15,
+    "device_id": 3,
+    "sensor_name": "performance_sensor",
+    "value": 83,
+    "timestamp": "2025-03-20T19:00:38.000Z"
+  },
+  {
+    "id": 10,
+    "device_id": 2,
+    "sensor_name": "load_sensor",
+    "value": 51.4,
+    "timestamp": "2025-03-20T19:00:34.000Z"
+  },
+  {
+    "id": 5,
+    "device_id": 1,
+    "sensor_name": "temperature_sensor",
+    "value": 22.8,
+    "timestamp": "2025-03-20T19:00:32.000Z"
+  },
+  {
+    "id": 19,
+    "device_id": 5,
+    "sensor_name": "working_time",
+    "value": 128,
+    "timestamp": "2025-03-20T18:59:40.000Z"
+  },
+  {
+    "id": 14,
+    "device_id": 3,
+    "sensor_name": "performance_sensor",
+    "value": 81.7,
+    "timestamp": "2025-03-20T18:59:38.000Z"
+  },
+  {
+    "id": 9,
+    "device_id": 2,
+    "sensor_name": "load_sensor",
+    "value": 49.8,
+    "timestamp": "2025-03-20T18:59:34.000Z"
+  },
+  {
+    "id": 4,
+    "device_id": 1,
+    "sensor_name": "temperature_sensor",
+    "value": 23.9,
+    "timestamp": "2025-03-20T18:59:32.000Z"
+  },
+  {
+    "id": 18,
+    "device_id": 5,
+    "sensor_name": "working_time",
+    "value": 125,
+    "timestamp": "2025-03-20T18:58:40.000Z"
+  },
+  {
+    "id": 13,
+    "device_id": 3,
+    "sensor_name": "performance_sensor",
+    "value": 79.3,
+    "timestamp": "2025-03-20T18:58:38.000Z"
+  },
+  {
+    "id": 8,
+    "device_id": 2,
+    "sensor_name": "load_sensor",
+    "value": 52.1,
+    "timestamp": "2025-03-20T18:58:34.000Z"
+  },
+  {
+    "id": 3,
+    "device_id": 1,
+    "sensor_name": "temperature_sensor",
+    "value": 24.3,
+    "timestamp": "2025-03-20T18:58:32.000Z"
+  },
+  {
+    "id": 17,
+    "device_id": 5,
+    "sensor_name": "working_time",
+    "value": 122,
+    "timestamp": "2025-03-20T18:57:40.000Z"
+  },
+  {
+    "id": 12,
+    "device_id": 3,
+    "sensor_name": "performance_sensor",
+    "value": 82.5,
+    "timestamp": "2025-03-20T18:57:38.000Z"
+  },
+  {
+    "id": 7,
+    "device_id": 2,
+    "sensor_name": "load_sensor",
+    "value": 48.2,
+    "timestamp": "2025-03-20T18:57:34.000Z"
+  },
+  {
+    "id": 2,
+    "device_id": 1,
+    "sensor_name": "temperature_sensor",
+    "value": 23.1,
+    "timestamp": "2025-03-20T18:57:32.000Z"
+  },
+  {
+    "id": 16,
+    "device_id": 5,
+    "sensor_name": "working_time",
+    "value": 120,
+    "timestamp": "2025-03-20T18:56:40.000Z"
+  },
+  {
+    "id": 11,
+    "device_id": 3,
+    "sensor_name": "performance_sensor",
+    "value": 80,
+    "timestamp": "2025-03-20T18:56:38.000Z"
+  },
+  {
+    "id": 6,
+    "device_id": 2,
+    "sensor_name": "load_sensor",
+    "value": 50.5,
+    "timestamp": "2025-03-20T18:56:34.000Z"
+  },
+  {
+    "id": 1,
+    "device_id": 1,
+    "sensor_name": "temperature_sensor",
+    "value": 22.5,
+    "timestamp": "2025-03-20T18:56:32.000Z"
+  }
+]

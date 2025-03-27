@@ -7,9 +7,12 @@ import metricsRoutes from "./routes/metricsRoutes";
 import logsRoutes from './routes/logsRoutes';
 import authRoutes from "./auth/authRoutes";
 import userRoutes from "./routes/userRoutes";
-import filesRoutes from "./routes/filesRoutes";
+import filesDownloadRoutes from "./routes/filesDownloadRoutes"
+//import devicesDownload from "./routes/filesDownloadRoutes";
+//import sensorsDownload from "./routes/filesDownloadRoutes";
 import "./config/mqtt";
 import path from "path";
+
 
 dotenv.config();
 
@@ -39,4 +42,4 @@ app.use("/api", metricsRoutes);
 app.use("/api", logsRoutes);
 app.use("/api", deviceRoutes);
 app.use("/api", sensorRoutes);
-app.use("/api", filesRoutes);
+app.use("/api", filesDownloadRoutes)
