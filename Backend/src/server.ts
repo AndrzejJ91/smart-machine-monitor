@@ -8,8 +8,7 @@ import logsRoutes from './routes/logsRoutes';
 import authRoutes from "./auth/authRoutes";
 import userRoutes from "./routes/userRoutes";
 import filesDownloadRoutes from "./routes/filesDownloadRoutes"
-//import devicesDownload from "./routes/filesDownloadRoutes";
-//import sensorsDownload from "./routes/filesDownloadRoutes";
+import messagesRoutes from "./routes/messagesRoutes"
 import "./config/mqtt";
 import path from "path";
 
@@ -37,9 +36,11 @@ app.listen(PORT, () => {
 
 // ROUTE CONNECTIONS
 app.use("/api", authRoutes);
+app.use("/api", messagesRoutes)
 app.use("/api", userRoutes);
 app.use("/api", metricsRoutes);
 app.use("/api", logsRoutes);
 app.use("/api", deviceRoutes);
 app.use("/api", sensorRoutes);
 app.use("/api", filesDownloadRoutes)
+

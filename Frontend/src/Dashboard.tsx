@@ -8,6 +8,7 @@ import Logs from "./pages/Logs";
 import Settings from "./pages/Settings";
 import Profile from "./pages/Profile";
 import Files from "./components/Files"
+import Messages from "./components/Messages";
 
 const Dashboard = () => {
   return (
@@ -34,6 +35,8 @@ const Dashboard = () => {
           <Route path="settings/profile" element={<Profile />} />
 
           <Route path="settings/files" element={<Files />} />
+
+          <Route path="settings/messages" element={<Messages />} />
         </Routes>
       </div>
     </div>
