@@ -1,25 +1,32 @@
 import React from 'react';
 import api from '../utlis/axios.Config';
+import { MessagesProps } from './Messages';
 
-interface MessagesComponentProps {
-    id: string;
-    name?: string;
-    config?: string;
-    data?: string;
-    created_at?: string;
-    timestamp?: string;
-    source?: string;
-    isRead: boolean;  // Poprawka: zmiana na boolean
+interface LocalMessagesComponentProps extends MessagesProps {
+    setMessages: React.Dispatch<React.SetStateAction<MessagesProps[]>>;
 }
 
-const MessageComponent: React.FC<MessagesComponentProps> = ({ name, config, data, created_at, timestamp, source, id, isRead }) => {
-
+const MessageComponent: React.FC<LocalMessagesComponentProps> = ({
+    name,
+    config,
+    data,
+    created_at,
+    timestamp,
+    source,
+    id,
+    isRead,
+    setMessages
+}) => {
     const markAsRead = async () => {
         try {
-            // Wysłanie statusu jako boolean
-            const response = await api.put(`/messages/${source}/${id}/status`, { isRead: true });
-            alert("Message marked as read");
-            console.log("Response data:", response.data);
+            await api.put(`/messages/${source}/${id}/status`, { isRead: true });
+
+            // Aktualizacja stanu po kliknięciu
+            setMessages((prev) =>
+                prev.map((msg) =>
+                    msg.id === id ? { ...msg, isRead: true } : msg
+                )
+            );
         } catch (error) {
             console.error("Error marking message as read:", error);
         }
